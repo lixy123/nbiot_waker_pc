@@ -5,6 +5,7 @@
  <b>一.方案设计:</b><br/>
 1.本方案包括两套硬件组合。<br/>
 2.第1套硬件: esp32-s2+nb-iot设备+蓝牙主设备。<br/>
+  注：用esp32也行，用esp32-s2是因为我手头正好有一块esp32-s2.<br/>
 3.第2套硬件: atmega32u4芯片的CJMCU-Beetle+蓝牙从设备。<br/>
 4.控制端：手机，使用软件IotMTQQPanel作为MQTT客户端 <br/>
 5运行原理:<br/>
