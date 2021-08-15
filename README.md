@@ -58,7 +58,10 @@
   说明：<br/>
   ESP32-S2通过串口连接air302获得了NB-IOT网络连接使用MQTT协议的能力 <br/>
   ESP32-S2通过串口连接蓝牙硬件获得与其它蓝牙硬件透传的能力 <br/>
-
+  因为mqtt运行原理，代码中此处要修改，一机一用: <br/>
+  String mqtt_clientid = "clientesp32_s2"; <br/>
+  String mqtt_topic = "/clientesp32_s2"; <br/>
+  String mqtt_topic_resp = "/clientesp32_s2/resp"; <br/>
 
  第2套硬件:<br/>
   1.Arduino 1.8.13 打开本代码<br/>
