@@ -18,9 +18,8 @@
 
 注：先前做过一版CJMCU-Beetle直接连接NB-IOT设备的PC唤醒器，效果不好，badusb脱机概率较大，可能原因是NB-IOT偶尔瞬间峰值电流较大，休眠的电脑供电不足导致其重启失效.<br/>
 
- <b> 二.硬件</b>  <br/>
- 
-第1套硬件:  <br/>
+ <b> 二.硬件</b>  <br/> 
+<b>第1套硬件: </b> <br/>
   1.ESP32<br/>
   2.air302<br/>
   引脚连接 <br/>
@@ -37,8 +36,8 @@
   4          RX <br/>
   3          TX <br/>
   
-第2套硬件:  <br/>
-  1.CJMCU-Beetle arduino Leonardo USB ATMEGA32U4 Mini Size Development Board br/>
+<b>第2套硬件: </b> <br/>
+  1.CJMCU-Beetle arduino Leonardo USB ATMEGA32U4 Mini Size Development Board <br/>
   2.蓝牙透传 <br/>
   CJMCU <==> 透传蓝牙 <br/>
   5v         5v <br/>
