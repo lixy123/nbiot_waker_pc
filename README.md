@@ -45,7 +45,6 @@
   GND        GND <br/>
   MOSI       TX <br/>
   MISO       RX   <br/>
-
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/1.jpg?raw=true' /> 
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/2.jpg?raw=true' /> 
 
@@ -71,21 +70,19 @@
   说明：<br/>
   目前实现解释器：模拟键盘回车,模拟键盘输出字符串(例：输出密码，输出PC休眠命令)，模拟鼠标单击<br/>
   
-
  <b> 四.用法：</b> <br/>
   1.ESP32连接好air302(带卡),蓝牙透传设备 接供电设备 <br/>
-  2.CJMCU 插入pc的USB口。
+  2.CJMCU 插入pc的USB口。<br/>
   3.PC控制面板找到USB的键盘，鼠标设备，设置不节能，允许唤醒。 <br/> 
     将PC进入休眠状态，此CJMCU会保持供电，相当于连接了一个USB的键盘，鼠标设备 <br/>
   4.安卓手机安装MQTT软件IotMTQQPanel, 设置好命令图标，通过图标发送如下协议的MQTT来遥控CJMCU， <br/>
     例如模拟按键盘，点击鼠标，以达到唤醒PC的目的. <br/>
   
-
  <b> 五.前景:</b> <br/>
 硬件成本约100左右<br/>
 适合人群：工作与电脑相关度高, 一天24小时不敢离开电脑的IT背景人士等<br/>
 
-
+ 
 
 
 
