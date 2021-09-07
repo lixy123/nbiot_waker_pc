@@ -36,7 +36,7 @@ https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE<br/>
 <b>第2套硬件: </b> <br/>
 >组成:<br/>
   1.CJMCU-Beetle arduino Leonardo USB ATMEGA32U4 Mini Size Development Board <br/>
-  2.蓝牙模块 HC-06 <br/>
+  2.蓝牙模块 HC-06 (注：使用前清除与其它蓝牙模块的配对记忆) <br/>
 >连线
   CJMCU <==> 透传蓝牙 <br/>
   5v         5v <br/>
@@ -52,6 +52,10 @@ https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE<br/>
   4.选择端口，烧录本程序 <br/>
   说明：<br/>
 
+  库文件:<br/>
+  https://github.com/espressif/arduino-esp32 版本:1.0.6 (注：不可用2.0版本，蓝牙库有bug, 调用蓝牙函数会反复重启)
+
+  代码修改处：<br/>
   此处修改成第2套硬件的蓝牙MAC<br/>
   bt_address[6]  = {0x00, 0x21, 0x13, 0x06, 0x0B, 0xF8};<br/>
 
