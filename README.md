@@ -5,7 +5,7 @@
 1.本方案包括两套硬件组合。<br/>
 2.第1套硬件: esp32+sim7020 <br/>
 注：此处代码直接用了这个产品 LilyGo-T-PCIE,  https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE <br/>
-    如果想自己用esp32和普通的sim7020模块组合，需要调整程序中有引脚. <br/>
+    如果想自己用esp32和普通的sim7020模块组合，需要调整代码中用到的引脚. <br/>
 3.第2套硬件: atmega32u4芯片的CJMCU-Beetle+ 蓝牙从设备 <br/>
 4.控制端：手机，使用软件IotMTQQPanel作为MQTT客户端 <br/>
 5运行原理:<br/>
