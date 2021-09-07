@@ -24,15 +24,15 @@
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/he.jpg?raw=true' />  <br/> 
  
 <b>第1套硬件: </b> <br/>
->组成:
-esp32+sim7020
->硬件资料:
-https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE
->功能：
-通过NBIOT技术连接mqtt服务器，可随时待命接收MQTT客户端发来的的文字。当收到文字后，通过蓝牙将文字发给第2套硬件
+>组成:<br/>
+esp32+sim7020<br/>
+>硬件资料:<br/>
+https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE<br/>
+>功能：<br/>
+通过NBIOT技术连接mqtt服务器，可随时待命接收MQTT客户端发来的的文字。当收到文字后，通过蓝牙将文字发给第2套硬件<br/>
     
 <b>第2套硬件: </b> <br/>
->组成:
+>组成:<br/>
   1.CJMCU-Beetle arduino Leonardo USB ATMEGA32U4 Mini Size Development Board <br/>
   2.蓝牙模块 HC-06 <br/>
 >连线
