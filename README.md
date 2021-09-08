@@ -3,41 +3,44 @@
 
  <b>一.方案设计:</b><br/>
 1.本方案包括两套硬件组合。<br/>
-2.第1套硬件: esp32+sim7020 <br/>
-注：本软件代码用的是这个产品 LilyGo-T-PCIE  <br/>
+2.第1套硬件: NBIOT版本的MQTT转蓝牙透传发送器<br/>
+    注：本软件代码用的是这个产品 LilyGo-T-PCIE  <br/>
     https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE <br/>
-    如果想自己用esp32和普通的sim7020模块组合，需要调整代码中用到的引脚. <br/>
-3.第2套硬件: atmega32u4芯片的CJMCU-Beetle+ 蓝牙从设备 <br/>
+3.第2套硬件: 蓝牙透传接收器转Badusb<br/>
 4.控制端：手机，使用软件IotMTQQPanel作为MQTT客户端 <br/>
 5运行原理:<br/>
-  A.ESP32与sim7020套装连接至mqtt服务器<br/>
-  B.手机通过mqtt软件发送文字至mqtt服务器<br/>
-  C.mqtt服务器将文字转发sim7020，sim7020通过串口转发ESP32<br/>
-  D.ESP32将文字通过蓝牙透传发送给CJMCU<br/>
-  E.CJMCU通过蓝牙透传收到文字，发送键盘,鼠标单击信号给PC/笔记本，完成唤醒PC/笔记本等功能<br/>
+  A.ESP32与sim7020套装连接至mqtt服务器, 准备接收mqtt文字<br/>
+  B.手机通过mqtt软件发送文字至mqtt服务器
+  C.mqtt服务器将文字传送给sim7020 <br/>
+  D.sim7020将文字通过串口转发ESP32<br/>
+  E.ESP32将文字通过蓝牙透传发送给CJMCU<br/>
+  F.CJMCU通过蓝牙透传收到文字，发送键盘,鼠标单击信号给PC/笔记本，完成唤醒PC/笔记本等功能<br/>
   
-运行原理图：<br/>
+运行原理：<br/>
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/yuanli.JPG?raw=true' /> <br/>
 
-注：先前做过一版CJMCU-Beetle直接连接NB-IOT设备的PC唤醒器，效果不好，模块USB键盘在PC上失去连接，导致不可用。可能原因是NB-IOT偶尔瞬间峰值电流较大，休眠的电脑供电不足导致其重启失效.<br/>
+注：先前做过一版CJMCU-Beetle直连NB-IOT设备的PC唤醒器，实测效果不好. Badusb在休眠的PC上经常中断失去连接，疑似NB-IOT瞬间电流较大，因为休眠的PC供电不足导致其重启失效.<br/>
 
  <b> 二.硬件</b>  <br/> 
   硬件图示： <br/> 
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/all.jpg?raw=true' />  <br/> 
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/he.jpg?raw=true' />  <br/> 
  
-<b>第1套硬件: </b> <br/>
+<b>第1套硬件: </b> NBIOT版本的MQTT转蓝牙透传发送器 <br/>
 >组成:<br/>
-esp32+sim7020<br/>
+esp32+sim7020 <br/>
 >硬件资料:<br/>
-https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE<br/>
+https://github.com/Xinyuan-LilyGO/LilyGo-T-PCIE <br/>
+注:也可以用普通esp32+sim7020自制,不一定需要用此模块,但引脚号需要调整,没有上面的模块省事.外观简洁. <br/>
 >功能：<br/>
 通过NBIOT技术连接mqtt服务器，可随时待命接收MQTT客户端发来的的文字。当收到文字后，通过蓝牙将文字发给第2套硬件<br/>
     
-<b>第2套硬件: </b> <br/>
+<b>第2套硬件: </b>蓝牙透传接收器转Badusb <br/>
 >组成:<br/>
   1.CJMCU-Beetle arduino Leonardo USB ATMEGA32U4 Mini Size Development Board <br/>
-  2.蓝牙模块 HC-06 (注：使用前清除与其它蓝牙模块的配对记忆) <br/>
+  2.蓝牙模块 HC-06 (注：使用前清除与其它蓝牙模块的配对记忆,否则连接不上) <br/>
+>硬件资料:<br/>
+https://www.dtmao.cc/news_show_906322.shtml <br/>
 >连线
   CJMCU <==> 透传蓝牙 <br/>
   5v         5v <br/>
