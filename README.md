@@ -57,13 +57,13 @@ https://www.dtmao.cc/news_show_906322.shtml <br/>
   说明：<br/>
 
   库文件:<br/>
-  https://github.com/espressif/arduino-esp32 版本:1.0.6 (注：不可用2.0版本，蓝牙库有bug, 调用蓝牙函数会反复重启)
+  https://github.com/espressif/arduino-esp32 版本:1.0.6 (注：2.0版本蓝牙库有bug, 蓝牙发送时ESP32会重启)
 
   代码修改处：<br/>
   此处修改成第2套硬件的蓝牙MAC<br/>
-  bt_address[6]  = {0x00, 0x21, 0x13, 0x06, 0x0B, 0xF8};<br/>
+  bt_address[6]  = {0x00, 0x21, 0x13, 0x06, 0x0B, 0xF8}; (注:根据实际蓝牙MAC调整)
 
-  因为mqtt运行原理，代码中此处要修改，一机一用: <br/>
+  因为mqtt运行原理，代码中此处要修改，一机一用 (注:如不修改,MQTT接收会与他人用的产生冲突)<br/>
   String mqtt_clientid = "clientesp32_s2"; <br/>
   String mqtt_topic = "/clientesp32_s2"; <br/>
   String mqtt_topic_resp = "/clientesp32_s2/resp"; <br/>
