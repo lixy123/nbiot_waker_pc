@@ -9,12 +9,12 @@
 3.第2套硬件: 蓝牙透传接收器转Badusb<br/>
 4.控制端：手机，使用软件IotMTQQPanel作为MQTT客户端 <br/>
 5运行原理:<br/>
-  A.ESP32与sim7020套装连接至mqtt服务器, 准备接收mqtt文字<br/>
-  B.手机通过mqtt软件发送文字至mqtt服务器
-  C.mqtt服务器将文字传送给sim7020 <br/>
-  D.sim7020将文字通过串口转发ESP32<br/>
-  E.ESP32将文字通过蓝牙透传发送给CJMCU<br/>
-  F.CJMCU通过蓝牙透传收到文字，发送键盘,鼠标单击信号给PC/笔记本，完成唤醒PC/笔记本等功能<br/>
+  A.ESP32利用NBIOT模块连接至mqtt服务器, 随时可接收mqtt文字<br/>
+  B.手机通过mqtt软件发送文字至mqtt服务器<br/>
+  C.mqtt服务器将文字传送给NBIOT模块 <br/>
+  D.NBIOT模块将文字通过串口转发ESP32<br/>
+  E.ESP32将文字通过蓝牙透传发送给Badusb<br/>
+  F.Badusb分析蓝牙收到文字，发送键盘,鼠标单击信号给PC/笔记本，完成唤醒PC/笔记本等功能<br/>
   
 运行原理：<br/>
 <img src= 'https://github.com/lixy123/nbiot_waker_pc/blob/main/yuanli.JPG?raw=true' /> <br/>
